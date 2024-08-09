@@ -154,6 +154,39 @@ body {
   font-weight: 100;
 }
 
+
+.contact-container {
+  position: relative;
+  top: -11rem;
+}
+
+.contact-container h3 {
+  text-align: center;
+  /* margin: auto; */
+  /* width: 100%; */
+}
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+label {
+  color: white;
+  text-align: left;
+}
+
+input, textarea{
+  border: solid gray .1px;
+  outline: none;
+  border-radius: 2px;
+  background-color: transparent;
+  width: 100%;
+  padding: 10px;
+  color: whitesmoke;
+}
+
 @media screen  and (max-width:700px){
   .project{
     display: flex;
@@ -173,5 +206,8 @@ body {
   .projects-container {
     gap: 12rem;
   }
-
+  .contact-container {
+    position: relative;
+    top: -5rem;
+  }
 }
