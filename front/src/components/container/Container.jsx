@@ -6,7 +6,7 @@ function Container() {
   return (
     <>
     <div className="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-                <Nav/>
+                <Nav active={'about'}/>
                 <About/>
                 <Footer/>
     </div>

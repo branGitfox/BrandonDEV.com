@@ -4,7 +4,7 @@ function Tutorials() {
   return (
     <>
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-        <Nav/>
+        <Nav active='tutorials'/>
                 <div class="container stack">
             <h4 class="text-light">Join me on</h4>
             <div class="container tech w-75  p-3">
