@@ -5,7 +5,7 @@ function Nav({active}) {
 
     <>
   
-        <header className="mb-auto ">
+        <header className="mb-auto " id='nav'>
             <div>
                     <h3 className="float-md-start text-light mb-0">BrandonDEV.com</h3>
                     <nav className="nav nav-masthead justify-content-center float-md-end">

@@ -26,7 +26,7 @@ function Tutorials() {
                             <h5 class="project-name">Utils</h5>
                             <p class="stacks-list project-desc text-light">VsCode, epxress, js, Node.js</p>
                             <hr/>
-                            <button class="btn btn-primary">Download</button>
+                            <button class="btn btn-primary mx-1">Download</button>
                             <button class="btn btn-outline-warning">Star</button>
                         </div>
                         <div class="project-images">
@@ -43,7 +43,7 @@ function Tutorials() {
                             <h5 class="project-name">Utils</h5>
                             <p class="stacks-list project-desc text-light">VsCode, epxress, js, Node.js</p>
                             <hr/>
-                            <button class="btn btn-primary">Download</button>
+                            <button class="btn btn-primary mx-1">Download</button>
                             <button class="btn btn-outline-warning">Star</button>
                         </div>
                         <div class="project-images"></div>
