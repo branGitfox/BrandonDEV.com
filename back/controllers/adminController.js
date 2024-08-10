@@ -1,5 +1,6 @@
 import asyncHandler from 'express-async-handler'
 import Admin from '../models/adminModels.js'
+import generateToken from '../utils/generateToken.js'
 //creation d'un admin
 
 const createAdmin = asyncHandler(async (req, res) => {  
@@ -32,6 +33,7 @@ const logAdmin = asyncHandler(async (req, res) => {
     }
 
     if(adminExist && await adminExist.matchPassword(password)){
+        generateToken(res, adminExist._id)
         res.status(200).json({message:'Admin logged', type:'success'})
     }else{
         res.status(200).json({message:'Invalid auth or password', type:'error'})

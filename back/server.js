@@ -5,6 +5,7 @@ import dotenv from 'dotenv'
 import cookieParser from 'cookie-parser'
 import adminRouter from './routes/adminRouter.js'
 import multer from 'multer'
+import projectRouter from './routes/projectRouter.js'
 
 dotenv.config()
 
@@ -40,6 +41,7 @@ const storage = multer.diskStorage({
 
 const upload = multer({storage})
 
+app.use('/api',upload.single('image'),projectRouter)
 // app.use('/api/project', upload.single('image'), ProjectRouter)
 
 
