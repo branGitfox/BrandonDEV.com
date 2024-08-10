@@ -6,8 +6,9 @@ import Skills from './components/skills/Skills'
 import Tutorials from './components/tutorials/Tutorials'
 import Contact from './components/contact/Contact'
 import NotFound from './components/404/NotFound'
-import Admin from './components/admin/Admin'
 import CreateAdmin from './components/createAdmin/CreateAdmin'
+import LogAdmin from './components/admin/LogAdmin'
+import Admin from './components/admin/Admin'
 function App() {
   return (
     <>
@@ -17,8 +18,9 @@ function App() {
               <Route path='/stacks&projects' element={<Skills/>}/>
               <Route  path='/tutorials' element={<Tutorials/>}/>
               <Route  path='/contact' element={<Contact/>}/>
-              <Route path='/admin' element={<Admin/>}/>
+              <Route path='/admin/logIn' element={<LogAdmin/>}/>
               <Route path='/admin/create' element={<CreateAdmin/>}/>
+              <Route path='/admin/page' element={<Admin/>}/>
               <Route path='*' element={<NotFound/>}/>
           </Routes>
       </BrowserRouter>
