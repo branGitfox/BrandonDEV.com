@@ -9,6 +9,9 @@ import NotFound from './components/404/NotFound'
 import CreateAdmin from './components/createAdmin/CreateAdmin'
 import LogAdmin from './components/admin/LogAdmin'
 import Admin from './components/admin/Admin'
+import NewProject from './components/admin/settings/NewProject'
+import NewStack from './components/admin/settings/NewStack'
+import NewTutorial from './components/admin/settings/NewTutorial'
 function App() {
   return (
     <>
@@ -21,6 +24,9 @@ function App() {
               <Route path='/admin/logIn' element={<LogAdmin/>}/>
               <Route path='/admin/create' element={<CreateAdmin/>}/>
               <Route path='/admin/page' element={<Admin/>}/>
+              <Route path='/admin/logged/newProject' element={<NewProject/>}/>
+              <Route path='/admin/logged/newTutorial' element={<NewStack/>}/>
+              <Route path='/admin/logged/newStack' element={<NewTutorial/>}/>
               <Route path='*' element={<NotFound/>}/>
           </Routes>
       </BrowserRouter>
