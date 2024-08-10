@@ -32,9 +32,9 @@ const logAdmin = asyncHandler(async (req, res) => {
     }
 
     if(adminExist && await adminExist.matchPassword(password)){
-        res.status(200).json({message:'Admin logged'})
+        res.status(200).json({message:'Admin logged', type:'success'})
     }else{
-        res.status(200).json({message:'Invalid auth or password'})
+        res.status(200).json({message:'Invalid auth or password', type:'error'})
     }
 })
 
