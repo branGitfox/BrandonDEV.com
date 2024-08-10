@@ -7,6 +7,7 @@ import Tutorials from './components/tutorials/Tutorials'
 import Contact from './components/contact/Contact'
 import NotFound from './components/404/NotFound'
 import Admin from './components/admin/Admin'
+import CreateAdmin from './components/createAdmin/CreateAdmin'
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
               <Route  path='/tutorials' element={<Tutorials/>}/>
               <Route  path='/contact' element={<Contact/>}/>
               <Route path='/admin' element={<Admin/>}/>
+              <Route path='/admin/create' element={<CreateAdmin/>}/>
               <Route path='*' element={<NotFound/>}/>
           </Routes>
       </BrowserRouter>

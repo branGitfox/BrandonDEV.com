@@ -1,13 +1,11 @@
+
 import React, { useState } from 'react'
-import { login } from '../../../actions/actions'
+import { createAdmin } from '../../../actions/actions'
 import {toast, ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { useNavigate } from 'react-router-dom'
-
-
-
-function Admin() {
-    const [formData, setFormData] = useState({})
+function CreateAdmin() {
+  const [formData, setFormData] = useState({})
     const navigate = useNavigate()
     const [loading, setIsLoading] = useState(false)
 
@@ -20,17 +18,17 @@ function Admin() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setIsLoading(true)
-        await login('http://localhost:3000/api/admin/logAdmin', formData).
-        then(res => res.data.type=='success'?toast.success(res.data.message)?navigate('/'):''
+        await createAdmin('http://localhost:3000/api/admin', formData) 
+        .then(res => res.data.type=='success'?toast.success(res.data.message)?navigate('/'):''
         :toast.error(res.data.message))
         .then(setIsLoading(false))
         .catch(err => toast.error(err.message))
+      
     }
-
   return (
     <>
-        <div className="container mt-5 text-warning">
-        <h1 className='mb-5'>Admin Login</h1>
+                <div className="container mt-5 text-warning">
+        <h1 className='mb-5'>Create Admin</h1>
         <div class="contact-container mt-5" style={{position:'relative', top:'2rem'}}>
                 <div class="form-container">
                     <form onSubmit={handleSubmit}>
@@ -43,18 +41,16 @@ function Admin() {
                            <input type="password" name="password" onChange={handleChange}  id="password"/>
                        </div>
                    <div>
-                    <button class="form-control btn btn-secondary">{loading?'wait...':'Login'}</button>
+                    <button class="form-control btn btn-secondary">{loading?'wait...':'Create'}</button>
                    </div>
                        
                     </form>
                 </div>
             </div>
     </div>
-        <ToastContainer/>
-    
+    <ToastContainer/>
     </>
-    
   )
 }
 
-export default Admin
+export default CreateAdmin

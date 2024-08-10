@@ -1,9 +1,14 @@
 import axios from 'axios' 
-import {toast} from 'react-toastify'
+
  const login = async (link, data) => {
   return  await axios.post(link, data)
 }
 
+const createAdmin = async (link, data) => {
+    return await axios.post(link, data)
+}
+
 export {
-    login
+    login,
+    createAdmin
 }
