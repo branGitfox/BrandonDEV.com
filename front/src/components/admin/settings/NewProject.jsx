@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { useNavigate } from 'react-router-dom'
+import { json, useNavigate } from 'react-router-dom'
 import { newProject, uploadGaranty, uploadImage } from '../../../../actions/actions'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -34,8 +34,11 @@ function NewProject() {
         // .then(setIsLoading(false))
         .catch(err => console.log(''))
         
-
-        
+        setFormData((formData) => ({...formData, ['image']:image.name, ['garanty']:garanty.name}))
+        await newProject(formData)
+        .then(res => res.data.type=='success'?toast.success(res.data.message):toast.error(res.data.message))
+        .then(setIsLoading(false))
+        .catch(err => toast.error('Make sure all fields are completed'))
     }
 
 
@@ -53,11 +56,11 @@ function NewProject() {
                     <form onSubmit={handleSubmit} encType='multipart/form-data'>
                         <div>
                             <label htmlFor="project">Project Name</label>
-                            <input type="text" name="project"  onChange={handleChange}  id="project"/>
+                            <input type="text" name="name"  onChange={handleChange}  id="project"/>
                         </div>
                         <div>
                             <label htmlFor="desc">Project Description</label>
-                           <textarea  name="desc"  onChange={handleChange}  id="desc"></textarea>
+                           <textarea  name="description"  onChange={handleChange}  id="desc"></textarea>
                        </div>
                        <div>
                              <label htmlFor="site">Project Link</label>
@@ -65,7 +68,7 @@ function NewProject() {
                         </div>
                         <div>
                              <label htmlFor="Source">Project Source</label>
-                            <input type="text" name="Source"  onChange={handleChange}  id="Source"/>
+                            <input type="text" name="source"  onChange={handleChange}  id="Source"/>
                         </div>
                         <div>
                              <label htmlFor="img">Project image</label>
