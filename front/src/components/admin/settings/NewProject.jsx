@@ -1,38 +1,40 @@
 import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
+import { newProject } from '../../../../actions/actions'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
 function NewProject() {
 
-    const [name, setName]=useState('')
-    const [desc, setDesc]=useState('')
-    const [site, setSite]=useState('')
-    const [source, setSource]=useState('')
-    const [image, setImage]=useState('')
-    const [garanty, setGaranty]=useState('')
-    const [stacks, setStacks]=useState('')
+ const [formData, setFormData] = useState()
 
     const navigate = useNavigate()
     const [loading, setIsLoading] = useState(false)
-    const [file, setFile]=useState(null)
+    const [image, setImage]=useState()
+    const [garanty, setGaranty]=useState()
 
     
     
-    
+    const handleChange = (e) => {
+        const {name, value} = e.target
+        setFormData((formData) => ({...formData, [name]:value}))
+    }
     
     
     const handleSubmit = async (e) => {
         e.preventDefault() 
-        const formData = new FormData ()
-        formData.append(name, name); 
-        formData.append("description", desc)
-        formData.append("site", site)
-        formData.append("source", source)
-        formData.append("image", image)
+        const formData = new FormData()
+        formData.append('image', image)
         formData.append('garanty', garanty)
-        formData.append("stacks", stacks)
-
+        // form.append('image', image)
+        // form.append('garanty', garanty)
+        // setFormData((formData) => ({...formData, ['image']:image, ['garanty']:garanty}))
         setIsLoading(true)
-      
-
+        // console.log(formData);
+        await newProject(formData)
+        .then(res => res.data.type=='success'?toast.success(res.data.message):toast.error(res.data.message))
+        .then(setIsLoading(false))
+        .catch(err => toast.error(err.message))
     }
 
 
@@ -47,22 +49,22 @@ function NewProject() {
                 <h1 className='text-white'>New Project</h1>
                 <div className="contact-container mt-5" style={{position:'relative', top:'2rem'}}>
                 <div className="form-container">
-                    {/* <form> */}
+                    <form onSubmit={handleSubmit} encType='multipart/form-data'>
                         <div>
                             <label htmlFor="project">Project Name</label>
-                            <input type="text" name="project" value={name} onChange={(e) =>setName(e.target.value)}  id="project"/>
+                            <input type="text" name="project"  onChange={handleChange}  id="project"/>
                         </div>
                         <div>
                             <label htmlFor="desc">Project Description</label>
-                           <textarea  name="desc" value={desc} onChange={(e) =>setDesc(e.target.value)}  id="desc"></textarea>
+                           <textarea  name="desc"  onChange={handleChange}  id="desc"></textarea>
                        </div>
                        <div>
                              <label htmlFor="site">Project Link</label>
-                            <input type="text" name="site" value={site} onChange={(e) =>setSite(e.target.value)}  id="site"/>
+                            <input type="text" name="site"  onChange={handleChange}  id="site"/>
                         </div>
                         <div>
                              <label htmlFor="Source">Project Source</label>
-                            <input type="text" name="Source" value={source} onChange={(e) =>setSource(e.target.value)}  id="Source"/>
+                            <input type="text" name="Source"  onChange={handleChange}  id="Source"/>
                         </div>
                         <div>
                              <label htmlFor="img">Project image</label>
@@ -74,16 +76,16 @@ function NewProject() {
                         </div>
                         <div>
                             <label htmlFor="stacks">Project stacks</label>
-                            <input type="text" name="stacks" value={stacks} onChange={(e) =>setStacks(e.target.value)}  id="stacks"/>
+                            <input type="text" name="stacks"  onChange={handleChange}  id="stacks"/>
                         </div>
                    <div>
-                        <button onClick={handleSubmit} className="form-control btn btn-secondary">{loading?'wait...':'New'}</button>
+                        <button  className="form-control btn btn-secondary">{loading?'wait...':'New'}</button>
                    </div>         
-                {/* </form> */}
+                </form>
             </div>
             </div>
     </div>
-                
+            <ToastContainer/>
        
     </>
   )

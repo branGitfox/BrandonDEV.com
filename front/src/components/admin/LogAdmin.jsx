@@ -20,7 +20,7 @@ function LogAdmin() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setIsLoading(true)
-        await login('http://localhost:3000/api/admin/logAdmin', formData).
+        await login(formData).
         then(res => res.data.type=='success'?toast.success(res.data.message)?navigate('/admin/page'):''
         :toast.error(res.data.message))
         .then(setIsLoading(false))

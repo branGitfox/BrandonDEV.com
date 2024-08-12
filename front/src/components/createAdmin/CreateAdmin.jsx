@@ -18,7 +18,7 @@ function CreateAdmin() {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setIsLoading(true)
-        await createAdmin('http://localhost:3000/api/admin', formData) 
+        await createAdmin(formData) 
         .then(res => res.data.type=='success'?toast.success(res.data.message)?navigate('/'):''
         :toast.error(res.data.message))
         .then(setIsLoading(false))

@@ -29,19 +29,33 @@ app.get('/', (req, res) => res.send('Server is running'))
 
 app.use('/api/admin', adminRouter)
 
-const storage = multer.diskStorage({
+const imageStorage = multer.diskStorage({
     destination:(req,file,cb) => {
         cb(null, 'public/images')
     },
 
     filename:(req, file, cb) => {
-        cb(null, file.originlname)
+        cb(null, file.originalname)
     }
 })
 
-const upload = multer({storage})
 
-app.use('/api',upload.single('image'),projectRouter)
-// app.use('/api/project', upload.single('image'), ProjectRouter)
+const garantyStorage = multer.diskStorage({
+    destination:(req,file,cb) => {
+        cb(null, 'public/garanty')
+    },
 
+    filename:(req, file, cb) => {
+        cb(null, file.originalname)
+    }
+})
+
+const uploadGaranty = multer({storage:garantyStorage})
+const uploadImage = multer({storage:imageStorage})
+
+// app.post('/api/project',upload.single('image'))
+// app.use('/api',projectRouter)
+app.post('/api/project', uploadImage.single('image'))
+// app.post('/api/project', uploadGaranty.single('garanty'))
+// app.post('/api/project', upload.single('garanty'))
 

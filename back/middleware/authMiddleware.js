@@ -7,7 +7,9 @@ const protect = expressAsyncHandler(async (req,res, next) => {
     token = req.cookies.jwt 
     if(token){
         try{
-            const decoded = jwt.verify(token, process.env.JWT_SECRET)
+            const decoded = jwt.verify(token, process.env.JWT_SECRET, {
+                httpOnly:true
+            })
             const admin = await Admin.findById(decoded.adminId).select('-password')
             if(!admin){
                 res.status(200).json({message:'Invalid token'})
@@ -16,10 +18,10 @@ const protect = expressAsyncHandler(async (req,res, next) => {
             req.admin = admin
             next()
         }catch(err){
-            res.status(500).json(err.message)
+            res.status(200).json(err.message)
         }
     }else{
-        res.status(404).json({message:'No token'})
+        res.status(200).json({message:'No token'})
     }
 })
 
