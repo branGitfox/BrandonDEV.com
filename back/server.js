@@ -53,9 +53,10 @@ const garantyStorage = multer.diskStorage({
 const uploadGaranty = multer({storage:garantyStorage})
 const uploadImage = multer({storage:imageStorage})
 
-// app.post('/api/project',upload.single('image'))
-// app.use('/api',projectRouter)
-app.post('/api/project', uploadImage.single('image'))
-// app.post('/api/project', uploadGaranty.single('garanty'))
-// app.post('/api/project', upload.single('garanty'))
+
+app.use('/api',projectRouter)
+app.post('/api/project/image', uploadImage.single('image'))
+app.post('/api/project/garanty', uploadGaranty.single('garanty'))
+
+
 

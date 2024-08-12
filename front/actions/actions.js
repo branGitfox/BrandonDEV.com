@@ -12,8 +12,19 @@ const newProject = async (data) => {
     return await axios.post('http://localhost:3000/api/project', data)
 }
 
+const uploadImage = async (data) => {
+    return await axios.post('http://localhost:3000/api/project/image', data)
+}
+
+const uploadGaranty = async (data) => {
+    return await axios.post('http://localhost:3000/api/project/garanty', data)
+}
+
+
 export {
     login,
     createAdmin,
-    newProject
+    newProject,
+    uploadImage,
+    uploadGaranty
 }

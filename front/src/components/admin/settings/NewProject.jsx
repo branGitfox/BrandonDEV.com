@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
-import { newProject } from '../../../../actions/actions'
+import { newProject, uploadGaranty, uploadImage } from '../../../../actions/actions'
 import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -23,18 +23,19 @@ function NewProject() {
     
     const handleSubmit = async (e) => {
         e.preventDefault() 
-        const formData = new FormData()
-        formData.append('image', image)
-        formData.append('garanty', garanty)
-        // form.append('image', image)
-        // form.append('garanty', garanty)
-        // setFormData((formData) => ({...formData, ['image']:image, ['garanty']:garanty}))
+        const formImage = new FormData()
+        const formGaranty = new FormData()
+        formImage.append('image', image)
+        formGaranty.append('garanty', garanty) 
         setIsLoading(true)
-        // console.log(formData);
-        await newProject(formData)
-        .then(res => res.data.type=='success'?toast.success(res.data.message):toast.error(res.data.message))
-        .then(setIsLoading(false))
-        .catch(err => toast.error(err.message))
+        await uploadImage(formImage)
+        .then(uploadGaranty(formGaranty))
+        // .then(res => res.data.type=='success'?toast.success(res.data.message):toast.error(res.data.message))
+        // .then(setIsLoading(false))
+        .catch(err => console.log(''))
+        
+
+        
     }
 
 
