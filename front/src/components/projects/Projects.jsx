@@ -1,50 +1,64 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { getProject } from '../../../actions/actions'
 
+import axios from 'axios'
 function Projects() {
+    const [projects, setProjects] = useState()
+    const [isLoading, setIsloading] = useState(false)
+
+    const getProjects = async () => {
+        setIsloading(true)
+        await axios.get('http://localhost:3000/api/project')
+        .then(res => setProjects(res.data))
+        .then(setIsloading(false))
+        .catch(err => console.log(err.message))
+    }
+
+useEffect(() => {
+    getProjects()
+}, [])
+
+
+
   return (
          <>
          <div class="projects">
           
              <h4 class="text-white">Projects</h4>
              <div class="projects-container">
-                    <div class="project ">
-                        <div class="project-info">
-                            <h5 class="project-name">Nom du projet</h5>
-                            <p class="project-desc text-light">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi deleniti fugiat.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, facilis magni. Vitae tempore ipsa asperiores nostrum esse sed ullam eveniet, omnis a possimus quas magnam neque quam quidem, debitis eius!
-                            </p>
-                            <h5 class="project-name">Stacks</h5>
-                            <p class="stacks-list project-desc text-light">Laravel, php, js, mysql</p>
-                            <hr/>
-                            <button class="btn btn-primary mx-1">Demo</button>
-                            <button class="btn btn-outline-secondary">Source</button>
-                        </div>
-                        <div class="project-images">
-                           
-                        </div>
-                    </div>
-                    <div class="project ">
-                        <div class="project-info">
-                            <h5 class="project-name">Nom du projet</h5>
-                            <p class="project-desc text-light">
-                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Modi deleniti fugiat.
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, facilis magni. Vitae tempore ipsa asperiores nostrum esse sed ullam eveniet, omnis a possimus quas magnam neque quam quidem, debitis eius!
-                            </p>
-                            <h5 class="project-name">Stacks</h5>
-                            <p class="stacks-list project-desc text-light">Laravel, php, js, mysql</p>
-                            <hr/>
-                            <button class="btn btn-primary mx-1">Demo</button>
-                            <button class="btn btn-outline-secondary">Source</button>
-                        </div>
-                        <div class="project-images"></div>
-                    </div>
-              
+                {isLoading?('loading...'):(<Project projects={projects}/>)}
              </div>
             
         </div>
     </>
   )
+}
+
+const Project = ({projects}) => {
+    return (
+        <>
+            {
+                    projects?.map((project, index) => (
+                        <div className="project" key={index}>
+                        <div className="project-info">
+                            <h5 className="project-name">{project.name}</h5>
+                            <p className="project-desc text-light">
+                               {project.description}
+                            </p>
+                            <h5 className="project-name">Stacks</h5>
+                            <p className="stacks-list project-desc text-light">{project.stacks}</p>
+                            <hr/>
+                            <button className="btn btn-primary mx-1">Demo</button>
+                            <button className="btn btn-outline-secondary">Source</button>
+                        </div>
+                        <div style={{backgroundImage:`url(http://localhost:3000/images/${project.image})`}} className="project-images">
+                           
+                        </div>
+                    </div>
+                    ))
+                }
+        </>
+    )
 }
 
 export default Projects

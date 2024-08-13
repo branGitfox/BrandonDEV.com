@@ -138,7 +138,7 @@ body {
 }
 
   .project-images {
-    background-image: url('./15.jpg');
+    /* background-image: url('./15.jpg'); */
     background-position: center;
     background-size: cover;
   }

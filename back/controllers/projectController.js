@@ -25,7 +25,12 @@ const newProject = expressAsyncHandler(async (req, res) => {
 
 
 const getProjects = expressAsyncHandler(async (req, res) => {
-    res.status(200).json({message:'getprojects'})
+    const projects = await Project.find()
+    if(projects){
+        res.status(200).json(projects)
+    }else{
+        res.status(200).json({message:'No project founded', type:'error'})
+    }
 })
 
 export {
