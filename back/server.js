@@ -11,9 +11,20 @@ import projectRouter from './routes/projectRouter.js'
 dotenv.config()
 
 const app = express()
-app.use(express.json())
 app.use(cookieParser())
-app.use(cors())
+app.use(express.json())
+
+
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173')
+    res.setHeader('Access-Control-Allow-Credentials', 'true')
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
+    next()
+})
+
+app.use(cors({
+    origin:'http://localhost:5173',
+}))
 app.use(express.static('public'))
 
 const PORT= process.env.PORT || 3000
@@ -27,7 +38,10 @@ mongoose.connect(MONGO_URI).then(res => {
 }).catch(err => console.log(err.message))
 
 
-app.get('/', (req, res) => res.send('Server is running'))
+app.get('/', (req, res) => {
+    console.log(req.cookies.jwt);
+    res.send('server is ruuning')
+})
 
 
 app.use('/api/admin', adminRouter)

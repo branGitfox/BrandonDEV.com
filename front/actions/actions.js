@@ -1,7 +1,9 @@
 import axios from 'axios' 
 
  const login = async (data) => {
-  return  await axios.post('http://localhost:3000/api/admin/logAdmin', data)
+  return  await axios.post('http://localhost:3000/api/admin/logAdmin' ,
+    
+    data, {withCredentials:true})
 }
 
 const createAdmin = async (data) => {

@@ -135,6 +135,7 @@ body {
 .project > div{
   border:solid white .5px;
   padding: 5px;
+  /* border-radius: 5px; */
 }
 
   .project-images {
