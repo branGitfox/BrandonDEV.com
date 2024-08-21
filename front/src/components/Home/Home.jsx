@@ -1,9 +1,8 @@
-import React from 'react'
-import Container from '../container/Container'
+import Nav from '../Nav/Nav'
 function Home() {
   return (
     <>    
-        <Container/> 
+        <Nav/>
     </>
   )
 }
