@@ -1,6 +1,6 @@
-import React from 'react'
+
 import { Bars3Icon, BellIcon, XMarkIcon , ArrowRightIcon , ArrowDownIcon, MapPinIcon} from '@heroicons/react/24/outline'
-import me from './brandon.jpg'
+import me from '../../assets/brandon.jpg'
 
 function Intro() {
   return (

@@ -1,6 +1,7 @@
 import {HashtagIcon, LinkIcon, PlayIcon, ClipboardDocumentListIcon, EyeIcon, InformationCircleIcon, HeartIcon, WifiIcon , NewspaperIcon, CommandLineIcon} from '@heroicons/react/24/outline'
 import me from './brandon.jpg'
-
+//import { Audio } from 'react-loader-spinner'
+//<Audio height="80" width="80" radius="9" color="green" ariaLabel="loading" wrapperStyle wrapperClass/>
 function Projects() {
   return (
     <>
@@ -21,7 +22,7 @@ function Projects() {
                         <div className="w-full flex justify-around p-2 mt-5">
                             <button className='w-20 rounded border-2 text-white justify-center  flex items-center border-gray-500 border-solid'>Live<WifiIcon className='w-5 h-5 text-blue-500 inline mx-1'/></button>
                             <button className='w-20 rounded border-2 text-white justify-center  flex items-center border-gray-500 border-solid'>Code<CommandLineIcon className='w-5  h-5 text-green-500 inline mx-1'/></button>
-                            {/* <button className='w-20 rounded border-2 text-white justify-center flex items-center border-gray-500 border-solid'>12<ArrowDownIcon className='w-4 h-4 text-green-500 inline mx-3'/></button>          */}
+                           
                         </div>
                     </div>
                 </div>
