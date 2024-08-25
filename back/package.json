@@ -4,8 +4,11 @@
   "description": "BrandonDEV.com",
   "main": "index.js",
   "type":"module",
+    "engines": {
+    "node": "18.x"
+  },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node index.js"
   },
   "author": "branGitFox",
   "license": "ISC",
