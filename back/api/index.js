@@ -3,10 +3,10 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import cookieParser from 'cookie-parser'
-import adminRouter from './routes/adminRouter.js'
+import adminRouter from '../routes/adminRouter.js'
 import multer from 'multer'
-import projectRouter from './routes/projectRouter.js'
-import tutorielRouter from './routes/tutorielRouter.js'
+import projectRouter from '../routes/projectRouter.js'
+import tutorielRouter from '../routes/tutorielRouter.js'
 
 
 dotenv.config()
@@ -34,8 +34,7 @@ const MONGO_URI = process.env.MONGO_URI
 //connexion a la base de donnee
 mongoose.connect(MONGO_URI).then(res => {
     console.log('MongoDb connected');
-    app.listen(PORT, (req, res) => console.log('http://localhost:3000')
-    )
+    
 }).catch(err => console.log(err.message))
 
 //route principale
