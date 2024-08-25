@@ -31,13 +31,13 @@ const logAdmin = asyncHandler(async (req, res) => {
     const adminExist = await Admin.findOne({pseudo})
     if(!adminExist){
         
-        res.status(200).json({message:'Admin do not exist'})
+        res.status(200).json({message:'Admin do not exist', type:'error'})
     }
 
     if(adminExist && await adminExist.matchPassword(password)){
         
-        generateToken(res, adminExist._id)
-        res.status(200).json({message:'Admin logged', type:'success'})
+        // generateToken(res, adminExist._id)
+        res.status(200).json(adminExist)
     }else{
         res.status(200).json({message:'Invalid auth or password', type:'error'})
     }

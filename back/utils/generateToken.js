@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken'
+// import jwt from 'jsonwebtoken'
 
 const generateToken = (res, adminId) => {
     let token = jwt.sign({adminId}, process.env.JWT_SECRET, {

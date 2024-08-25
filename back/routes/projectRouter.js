@@ -4,6 +4,6 @@ import protect from '../middleware/authMiddleware.js'
 import cookieParser from 'cookie-parser'
 const projectRouter= express.Router()
 projectRouter.use(cookieParser())
-projectRouter.route('/project').post(protect,newProject).get(getProjects)
+projectRouter.route('/project').post(newProject).get(getProjects)
 
 export default projectRouter

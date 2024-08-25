@@ -1,19 +1,30 @@
-import React from 'react'
 
-import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon , ArrowRightIcon , ArrowDownIcon, MapPinIcon} from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom'
+import { Disclosure, DisclosureButton, DisclosurePanel, Menu,MenuItem, MenuItems } from '@headlessui/react'
+import { Bars3Icon,  XMarkIcon} from '@heroicons/react/24/outline'
+import github from '../../assets/github.svg'
 
-const navigation = [
-  { name: 'Home', href: '#', current: true },
-  { name: 'Stacks & Tools', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false},
-  { name: 'Tutorials', href: '#', current: false},
-]
+
+
+
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 function Nav() {
+  const navigation = [
+    { name: 'Home', href: '/', current: location.pathname =='/'?true:false },
+    { name: 'Stacks', href: '/stacks', current: location.pathname =='/stacks'? true:false },
+    { name: 'Projects', href: '/projects', current: location.pathname =='/projects'?true:false},
+    { name: 'Tutorials', href: '/tutorials', current: location.pathname =='/tutorials'?true:false},
+  ]
+
+  const onGithub = () => {
+    location.target='_blank'
+    location.href = 'https://www.github.com/BranGitfox'
+  }
+  
   return (
    <>
      <Disclosure as="nav" className="bg-gray-800">
@@ -35,9 +46,9 @@ function Nav() {
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
-                    href={item.href}
+                    to={item.href}
                     aria-current={item.current ? 'page' : undefined}
                     className={classNames(
                       item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
@@ -45,7 +56,7 @@ function Nav() {
                     )}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
@@ -56,35 +67,29 @@ function Nav() {
             {/* Profile dropdown */}
             <Menu as="div" className="relative ml-3">
               <div>
-                {/* <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">Open user menu</span>
-                  <img
-                    alt=""
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    className="h-8 w-8 rounded-full"
-                  />
-                </MenuButton> */}
-                <button className='p-1 bg-grey-900 rounded border-2 border-gray-600 font-200'>Github</button>
+            
+                <button onClick={onGithub} className='px-5 py-1 bg-blue-900 rounded-xl border-2 border-blue-900 font-200'>
+                  <img  src={github} alt="" />
+                </button>
               </div>
               <MenuItems
                 transition
                 className="absolute  right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 transition focus:outline-none data-[closed]:scale-95 data-[closed]:transform data-[closed]:opacity-0 data-[enter]:duration-100 data-[leave]:duration-75 data-[enter]:ease-out data-[leave]:ease-in"
               >
                 <MenuItem>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
+                  <Link  className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
                     Your Profile
-                  </a>
+                  </Link>
                 </MenuItem>
                 <MenuItem>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
+                  <Link  className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
                     Settings
-                  </a>
+                  </Link>
                 </MenuItem>
                 <MenuItem>
-                  <a href="#" className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
+                  <Link  className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100">
                     Sign out
-                  </a>
+                  </Link>
                 </MenuItem>
               </MenuItems>
             </Menu>
@@ -95,10 +100,11 @@ function Nav() {
       <DisclosurePanel className="sm:hidden">
         <div className="space-y-1 px-2 pb-3 pt-2">
           {navigation.map((item) => (
-            <DisclosureButton
+            <Link
               key={item.name}
-              as="a"
-              href={item.href}
+              as="Link"
+              to={item.href}
+              
               aria-current={item.current ? 'page' : undefined}
               className={classNames(
                 item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
@@ -106,7 +112,7 @@ function Nav() {
               )}
             >
               {item.name}
-            </DisclosureButton>
+            </Link>
           ))}
         </div>
       </DisclosurePanel>
