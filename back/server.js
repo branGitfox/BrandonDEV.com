@@ -17,7 +17,7 @@ app.use(express.json())
 
 
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://brandon-dev-com.vercel.app/')
+    res.setHeader('Access-Control-Allow-Origin', 'https://brandon-dev-com.vercel.app')
     res.setHeader('Access-Control-Allow-Credentials', 'true')
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization')
     next()
@@ -34,9 +34,6 @@ const MONGO_URI = process.env.MONGO_URI
 //connexion a la base de donnee
 mongoose.connect(MONGO_URI).then(res => {
     console.log('MongoDb connected');
-    app.listen(PORT, (req, res) => {
-        console.log(`https://brandon-com-api.vercel.app`);
-    })
 }).catch(err => console.log(err.message))
 
 //route principale
