@@ -3,7 +3,7 @@ import { FolderIcon } from "@heroicons/react/24/outline"
 import { newProject , uploadImage, uploadGaranty} from "../../../../actions/actions"
 
 import Nav from "../../Nav/Nav"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { toast , ToastContainer} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 

@@ -1,5 +1,5 @@
 import expressAsyncHandler from 'express-async-handler'
-import jwt from 'jsonwebtoken'
+// import jwt from 'jsonwebtoken'
 import Admin from '../models/adminModels.js';
 
 const protect = expressAsyncHandler(async (req,res, next) => {
