@@ -24,7 +24,7 @@ app.use((req, res, next) => {
 })
 
 app.use(cors({
-    origin:'https://brandon-dev-com.vercel.app/',
+    origin:'https://brandon-dev-com.vercel.app',
 }))
 app.use(express.static('public'))
 
