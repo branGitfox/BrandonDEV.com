@@ -3,10 +3,10 @@ import cors from 'cors'
 import mongoose from 'mongoose'
 import dotenv from 'dotenv'
 import cookieParser from 'cookie-parser'
-import adminRouter from '../routes/adminRouter.js'
+import adminRouter from './routes/adminRouter.js'
 import multer from 'multer'
-import projectRouter from '../routes/projectRouter.js'
-import tutorielRouter from '../routes/tutorielRouter.js'
+import projectRouter from './routes/projectRouter.js'
+import tutorielRouter from './routes/tutorielRouter.js'
 
 
 dotenv.config()
