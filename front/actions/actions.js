@@ -1,64 +1,64 @@
 import axios from 'axios' 
 
  const login = async (data) => {
-  return  await axios.post('http://localhost:3000/api/admin/logAdmin' ,data)
+  return  await axios.post('https://brandon-dev-com.vercel.app/api/admin/logAdmin' ,data)
 }
 
 const createAdmin = async (data) => {
-    return await axios.post('http://localhost:3000/api/admin', data)
+    return await axios.post('https://brandon-dev-com.vercel.app/api/admin', data)
 }
 
 const newProject = async (data) => {
-    return await axios.post('http://localhost:3000/api/project', data)
+    return await axios.post('https://brandon-dev-com.vercel.app/api/project', data)
 }
 
 const getProject = async () => {
-    return await axios.get('http://localhost:3000/api/project')
+    return await axios.get('https://brandon-dev-com.vercel.app/api/project')
 }
 
 const uploadImage = async (data) => {
-    return await axios.post('http://localhost:3000/api/project/image', data)
+    return await axios.post('https://brandon-dev-com.vercel.app/api/project/image', data)
 }
 
 const uploadGaranty = async (data) => {
-    return await axios.post('http://localhost:3000/api/project/garanty', data)
+    return await axios.post('https://brandon-dev-com.vercel.app/api/project/garanty', data)
 }
 
 
 const uploadTutoImage = async (data) => {
-    return await axios.post('http://localhost:3000/api/tutoriel/image', data)
+    return await axios.post('https://brandon-dev-com.vercel.app/api/tutoriel/image', data)
 
 }
 
 const uploadTutoVideo = async (data) => {
-    return await axios.post('http://localhost:3000/api/tutoriel/video', data)
+    return await axios.post('https://brandon-dev-com.vercel.app/api/tutoriel/video', data)
 
 }
 
 
 const newTutorial = async (data) => {
-    return await axios.post('http://localhost:3000/api/tutoriel', data)
+    return await axios.post('https://brandon-dev-com.vercel.app/api/tutoriel', data)
 
 }
 
 const getTutorial = async () => {
-    return await axios.get('http://localhost:3000/api/tutoriel')
+    return await axios.get('https://brandon-dev-com.vercel.app/api/tutoriel')
 }
 
 const getOneTutorial = async (id) => {
-    return await axios.get(`http://localhost:3000/api/tutoriel/${id}`)
+    return await axios.get(`https://brandon-dev-com.vercel.app/api/tutoriel/${id}`)
 }
 
 const incrementView = async (id) => {
-    return await axios.get(`http://localhost:3000/api/tutoriel/incrementView/${id}`)
+    return await axios.get(`https://brandon-dev-com.vercel.app/api/tutoriel/incrementView/${id}`)
 }
 
 const incrementLike = async (id) => {
-    return await axios.get(`http://localhost:3000/api/tutoriel/incrementLike/${id}`)
+    return await axios.get(`https://brandon-dev-com.vercel.app/api/tutoriel/incrementLike/${id}`)
 }
 
 const incrementDownload = async (id) => {
-    return await axios.get(`http://localhost:3000/api/tutoriel/incrementDownload/${id}`)
+    return await axios.get(`https://brandon-dev-com.vercel.app/api/tutoriel/incrementDownload/${id}`)
 }
 
 const protect = () => {
