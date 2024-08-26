@@ -38,14 +38,9 @@ mongoose.connect(MONGO_URI).then(res => {
 }).catch(err => console.log(err.message))
 
 //route principale
-app.get('/', (req, res) => {
-  
-    res.send('server is ruuning')
-})
 
-app.get('/project', (req,res)=>{
-   res.status(200).json({'its working !!'})
-})
+
+
 
 //route pour l'admin
 app.use('/api/admin', adminRouter)
