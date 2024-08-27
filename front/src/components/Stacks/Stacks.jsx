@@ -3,9 +3,7 @@ import Nav from '../Nav/Nav'
 
 const fronts = [
     {name:'HTML', logo:'/html.svg'},
-    {name:'CSS', logo:'/csss.svg'},
-    {name:'JavaScript', logo:'/javascript.svg'},
-    {name:'Ajax', logo:'/ajax.svg'},
+    {name:'CSS', logo:'/css.svg'},
     {name:'React', logo:'/react.svg'},
     {name:'Bootstrap', logo:'/bootstrap.svg'},
     {name:'Tailwind', logo:'/tailwind.svg'},
@@ -17,6 +15,8 @@ const backs = [
     {name:'Express', logo:'/express.svg'},
     {name:'Mysql', logo:'/mysql.svg'},
     {name:'MongoDb', logo:'/mongodb.svg'},
+    {name:'JavaScript', logo:'/javascript.png'},
+    {name:'Ajax', logo:'/ajax.jfif'},
 ]
 
 const tools = [
@@ -27,7 +27,7 @@ const tools = [
 ]
 
 const others = [
-    {name:'Window', logo:'/window.svg'},
+    {name:'Windows', logo:'/windows.svg'},
     {name:'Linux', logo:'/linux.svg'},
 ]
 
