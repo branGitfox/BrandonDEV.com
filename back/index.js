@@ -39,7 +39,7 @@ mongoose.connect(MONGO_URI).then(res => {
 
 //route principale
 app.get('/project', (req, res)=>{
-   res.status(200).json({data:'hello world'})
+   res.send({message:'hello world'})
 })
 
 
