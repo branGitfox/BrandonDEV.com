@@ -28,7 +28,7 @@ app.use(cors({
 }))
 app.use(express.static('public'))
 
-const PORT= process.env.PORT || 10000
+const PORT= process.env.PORT || 3000
 const MONGO_URI = process.env.MONGO_URI
 
 //connexion a la base de donnee
