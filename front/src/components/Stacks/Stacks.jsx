@@ -4,6 +4,7 @@ import Nav from '../Nav/Nav'
 const fronts = [
     {name:'HTML', logo:'/html.svg'},
     {name:'CSS', logo:'/css.svg'},
+    {name:'JavaScript', logo:'/javascript.png'},
     {name:'React', logo:'/react.svg'},
     {name:'Bootstrap', logo:'/bootstrap.svg'},
     {name:'Tailwind', logo:'/tailwind.svg'},
@@ -15,7 +16,6 @@ const backs = [
     {name:'Express', logo:'/express.svg'},
     {name:'Mysql', logo:'/mysql.svg'},
     {name:'MongoDb', logo:'/mongodb.svg'},
-    {name:'JavaScript', logo:'/javascript.png'},
     {name:'Ajax', logo:'/ajax.jfif'},
 ]
 
@@ -87,7 +87,7 @@ function Stacks() {
                 <div className=" mt-3 p-1 flex flex-wrap justify-evenly gap-3">
                     {
                         others.map((other, index) => <div key={index} className="text-gray-400 rounded-md h-4 w flex justify-center p-5 items-center border-solid border-2 border-blue-900">
-                        <img className='w-4 h-4 mx-2 rounded-lg ' src={other.logo} alt="" />
+                        <img className='w-4 h-4 mx-2 ' src={other.logo} alt="" />
 
                         {other.name}
                     </div> )
