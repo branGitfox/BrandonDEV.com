@@ -1,64 +1,64 @@
 import axios from 'axios' 
 
  const login = async (data) => {
-  return  await axios.post('https://brandon-com-api.vercel.app/api/admin/logAdmin' ,data)
+  return  await axios.post('https://brandondev-com-3.onrender.com/api/admin/logAdmin' ,data)
 }
 
 const createAdmin = async (data) => {
-    return await axios.post('https://brandon-com-api.vercel.app/api/admin', data)
+    return await axios.post('https://brandondev-com-3.onrender.com/api/admin', data)
 }
 
 const newProject = async (data) => {
-    return await axios.post('https://brandon-com-api.vercel.app/api/project', data)
+    return await axios.post('https://brandondev-com-3.onrender.com/api/project', data)
 }
 
 const getProject = async () => {
-    return await axios.get('https://brandon-com-api.vercel.app/api/project')
+    return await axios.get('https://brandondev-com-3.onrender.com/api/project')
 }
 
 const uploadImage = async (data) => {
-    return await axios.post('https://brandon-com-api.vercel.app/api/project/image', data)
+    return await axios.post('https://brandondev-com-3.onrender.com/api/project/image', data)
 }
 
 const uploadGaranty = async (data) => {
-    return await axios.post('https://brandon-com-api.vercel.app/api/project/garanty', data)
+    return await axios.post('https://brandondev-com-3.onrender.com/api/project/garanty', data)
 }
 
 
 const uploadTutoImage = async (data) => {
-    return await axios.post('https://brandon-com-api.vercel.app/api/tutoriel/image', data)
+    return await axios.post('https://brandondev-com-3.onrender.com/api/tutoriel/image', data)
 
 }
 
 const uploadTutoVideo = async (data) => {
-    return await axios.post('https://brandon-com-api.vercel.app/api/tutoriel/video', data)
+    return await axios.post('https://brandondev-com-3.onrender.com/api/tutoriel/video', data)
 
 }
 
 
 const newTutorial = async (data) => {
-    return await axios.post('https://brandon-com-api.vercel.app/api/tutoriel', data)
+    return await axios.post('https://brandondev-com-3.onrender.com/api/tutoriel', data)
 
 }
 
 const getTutorial = async () => {
-    return await axios.get('https://brandon-com-api.vercel.app/api/tutoriel')
+    return await axios.get('https://brandondev-com-3.onrender.com/api/tutoriel')
 }
 
 const getOneTutorial = async (id) => {
-    return await axios.get(`https://brandon-com-api.vercel.app/api/tutoriel/${id}`)
+    return await axios.get(`https://brandondev-com-3.onrender.com/api/tutoriel/${id}`)
 }
 
 const incrementView = async (id) => {
-    return await axios.get(`https://brandon-com-api.vercel.app/api/tutoriel/incrementView/${id}`)
+    return await axios.get(`https://brandondev-com-3.onrender.com/api/tutoriel/incrementView/${id}`)
 }
 
 const incrementLike = async (id) => {
-    return await axios.get(`https://brandon-com-api.vercel.app/api/tutoriel/incrementLike/${id}`)
+    return await axios.get(`https://brandondev-com-3.onrender.com/api/tutoriel/incrementLike/${id}`)
 }
 
 const incrementDownload = async (id) => {
-    return await axios.get(`https://brandon-com-api.vercel.app/api/tutoriel/incrementDownload/${id}`)
+    return await axios.get(`https://brandondev-com-3.onrender.com/api/tutoriel/incrementDownload/${id}`)
 }
 
 const protect = () => {
