@@ -34,7 +34,7 @@ const MONGO_URI = process.env.MONGO_URI
 //connexion a la base de donnee
 mongoose.connect(MONGO_URI).then(res => {
     console.log('MongoDb connected');
-    app.listen(PORT, ()=> console.log('server'))
+    // app.listen(PORT, ()=> console.log('http://localhost:3000'))
 }).catch(err => console.log(err.message))
 
 //route principale
