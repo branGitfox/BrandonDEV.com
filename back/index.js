@@ -115,4 +115,4 @@ app.post('/api/tutoriel/video', uploadTutoVideo.single('video'))
 //route pour le tutoriel
 app.use('/api', tutorielRouter)
 
-export default (req, res) => app(req, res)
+
