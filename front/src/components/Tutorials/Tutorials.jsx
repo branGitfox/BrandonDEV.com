@@ -27,7 +27,7 @@ function Tutorials() {
             <h2 className=' mt-10 text-3xl text-gray-400 text-center'><LinkIcon className='w-7 h-7 inline text-violet-500'/>Join Me On</h2>
                 <div className="mt-7 mx-auto  w-80 p-3 flex justify-around flex-wrap">
                     <div className="w h-4  flex justify-center items-center">
-                        <img src={youtube} alt="" />
+                        <img className='w-10 h-10' src={youtube} alt="" />
                     </div>
                     <div className="w h-4  flex justify-center items-center">
                         <img className='w-10 h-10' src={instagram} alt="" />
