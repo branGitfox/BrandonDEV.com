@@ -2,33 +2,33 @@ import React from 'react'
 import Nav from '../Nav/Nav'
 
 const fronts = [
-    {name:'HTML', logo:'/html.png'},
-    {name:'CSS', logo:'/csss.jfif'},
-    {name:'JavaScript', logo:'/javascript.png'},
-    {name:'Ajax', logo:'/ajax.jfif'},
+    {name:'HTML', logo:'/html.svg'},
+    {name:'CSS', logo:'/csss.svg'},
+    {name:'JavaScript', logo:'/javascript.svg'},
+    {name:'Ajax', logo:'/ajax.svg'},
     {name:'React', logo:'/react.svg'},
-    {name:'Bootstrap', logo:'/bootstrap.jfif'},
-    {name:'Tailwind', logo:'/tailwind.png'},
+    {name:'Bootstrap', logo:'/bootstrap.svg'},
+    {name:'Tailwind', logo:'/tailwind.svg'},
 ]
 
 const backs = [
-    {name:'PHP', logo:'/php.png'},
-    {name:'Node js', logo:'/nodejs.png'},
-    {name:'Express', logo:'/express.png'},
-    {name:'Mysql', logo:'/mysql.png'},
-    {name:'MongoDb', logo:'/mongodb.png'},
+    {name:'PHP', logo:'/php.svg'},
+    {name:'Node js', logo:'/nodejs.svg'},
+    {name:'Express', logo:'/express.svg'},
+    {name:'Mysql', logo:'/mysql.svg'},
+    {name:'MongoDb', logo:'/mongodb.svg'},
 ]
 
 const tools = [
-    {name:'Git', logo:'/git.png'},
-    {name:'Insomia', logo:'/insomnia.jfif'},
-    {name:'Vs Code', logo:'/vscode.jfif'},
-    {name:'Docker', logo:'/docker.png'},
+    {name:'Git', logo:'/git.svg'},
+    {name:'Insomia', logo:'/insomnia.svg'},
+    {name:'Vs Code', logo:'/vscode.svg'},
+    {name:'Docker', logo:'/docker.svg'},
 ]
 
 const others = [
-    {name:'Window', logo:'/window.png'},
-    {name:'Linux', logo:'/linux.png'},
+    {name:'Window', logo:'/window.svg'},
+    {name:'Linux', logo:'/linux.svg'},
 ]
 
 function Stacks() {
