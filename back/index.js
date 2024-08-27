@@ -38,7 +38,7 @@ mongoose.connect(MONGO_URI).then(res => {
 }).catch(err => console.log(err.message))
 
 //route principale
-app.get('/project', (req, res)=>{
+app.get('/', (req, res)=>{
    res.send({message:'hello world'})
 })
 
