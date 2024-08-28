@@ -7,6 +7,7 @@ import adminRouter from './routes/adminRouter.js'
 import multer from 'multer'
 import projectRouter from './routes/projectRouter.js'
 import tutorielRouter from './routes/tutorielRouter.js'
+import path from 'path'
 
 
 dotenv.config()
@@ -14,6 +15,7 @@ dotenv.config()
 const app = express()
 app.use(cookieParser())
 app.use(express.json())
+
 
 
 app.use((req, res, next) => {
@@ -51,7 +53,7 @@ app.use('/api/admin', adminRouter)
 //storage pour l'image et la video du projet
 const imageStorage = multer.diskStorage({
     destination:(req,file,cb) => {
-        cb(null, 'public/images')
+        cb(null, path.join(__dirname,'public/images'))
     },
     
     filename:(req, file, cb) => {
@@ -62,7 +64,7 @@ const imageStorage = multer.diskStorage({
 
 const garantyStorage = multer.diskStorage({
     destination:(req,file,cb) => {
-        cb(null, 'public/garanty')
+        cb(null, path.join(__dirname,'public/garanty'))
     },
     
     filename:(req, file, cb) => {
@@ -87,7 +89,7 @@ app.post('/api/project/garanty', uploadGaranty.single('garanty'))
 
 const tutoImageStorage = multer.diskStorage({
     destination: function(req, file, cb){
-        cb(null, 'public/tutoImages')
+        cb(null, path.join(__dirname,'public/tutoImages'))
     },
     filename: function(req, file, cb){
         cb(null, file.originalname)
@@ -96,7 +98,7 @@ const tutoImageStorage = multer.diskStorage({
 
 const tutoVideoStorage = multer.diskStorage({
     destination: function(req, file, cb){
-        cb(null, 'public/tutoVideos')
+        cb(null, path.join(__dirname,'public/tutoVideos'))
     },
     filename: function(req, file, cb){
         cb(null, file.originalname)

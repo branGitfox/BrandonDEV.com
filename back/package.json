@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "BrandonDEV.com",
   "main": "index.js",
-  "type":"module",
-    "engines": {
+  "type": "module",
+  "engines": {
     "node": "18.x"
   },
   "scripts": {
