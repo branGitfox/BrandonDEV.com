@@ -29,13 +29,16 @@ app.use(cors({
     origin:'https://brandon-dev-com.vercel.app',
 }))
 app.use(express.static('public'))
-
+const __dirname =  path.dirname(import.meta.url)
 const PORT= process.env.PORT || 3000
 const MONGO_URI = process.env.MONGO_URI
 
 //connexion a la base de donnee
 mongoose.connect(MONGO_URI).then(res => {
     console.log('MongoDb connected');
+  
+   
+    
     app.listen(PORT, ()=> console.log('http://localhost:3000'))
 }).catch(err => console.log(err.message))
 
