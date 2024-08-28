@@ -41,7 +41,7 @@ function Nav() {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
-              <h3 className='font-medium text-3xl text-blue-700'>BR.com</h3>
+              <h3 className='font-medium font-bold text-4xl text-blue-700'>BR.com</h3>
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
