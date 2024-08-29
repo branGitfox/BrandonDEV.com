@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom'
 
 function Tutorials() {
     const [tutorials, setTutorials] = useState()
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
         setLoading(true)
