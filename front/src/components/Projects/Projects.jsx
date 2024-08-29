@@ -5,7 +5,7 @@ import LoadingSpinnerComponent from 'react-spinners-components'
 import { getProject, protect } from '../../../actions/actions'
 import { useNavigate } from 'react-router-dom'
 function Projects() {
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [projects, setProjects] = useState()
 
 
