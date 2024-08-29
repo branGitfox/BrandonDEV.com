@@ -10,6 +10,7 @@ import TutorielsForm from './components/Tutorials/TutorielsForm/TutorielsForm'
 import Signin from './components/Admin/Signin/Signin'
 import View from './components/Tutorials/View/View'
 import About from './components/About/About'
+import NotFound from './components/404/NotFound'
 function App() {
   return (
     <>
@@ -25,6 +26,7 @@ function App() {
               <Route path='/backend/newProject' element={<ProjectForm/>}/>
               <Route path='/backend/newTutorials' element={<TutorielsForm/>}/>
               <Route path='/about' element={<About/>}/>
+             <Route path='*' element={<NotFound/>}/>
           </Routes>
       </BrowserRouter>
     </>
