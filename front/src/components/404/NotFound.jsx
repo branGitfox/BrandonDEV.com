@@ -1,36 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-const styles={
-  title:{
-    color:'red'
-  },
-  p:{
-    color:'orange'
-  },
 
-  img:{
-    width:'400px',
-    height:'400px'
-  },
-  div:{
-    display:'flex',
-    flexDirection:'column',
-    alignItems:'center',
-    padding:'10px',
-    textAlign:'left',
-    margin:'auto'
-    
-  }
-}
 function NotFound() {
   return (
-    <div style={styles.div}>
-        <h1 style={styles.title}>404 Not Found</h1>
-        <p style={styles.p}>*la page que vous essayer d'acceder n'existe pas </p>
-        <p style={styles.p}>*The page which you're trying to access doesn't exist </p>
-        <p style={styles.p}>*Tsy miexista ilay pejy tiano ho jerena</p>
+    <div className='mt-5 '  style={styles.div}>
+        <h1 className='text-red-400 font-bold text-4xl' >404 Not Found</h1>
+        <p className='test-orange-400 font-base' >*la page que vous essayer d'acceder n'existe pas </p>
+        <p className='test-orange-400 font-base' >*The page which you're trying to access doesn't exist </p>
+        <p  className='test-orange-400 font-base' >*Tsy miexista ilay pejy tiano ho jerena</p>
         <img src="" alt="" />
-        <Link to={'/'}>Return to a valid page</Link>
+        <Link className='text-blue-900 underline decoration-dotted decoration-blue-400' to={'/'}>Return to a valid page</Link>
     </div>
   )
 }
