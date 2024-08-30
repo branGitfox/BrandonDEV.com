@@ -11,7 +11,7 @@ function Intro() {
   }
 
   const onLinkedIn=()=>{
-    location.href='https://www.linkedin.com'
+    location.href='https://www.linkedin.com/in/brandon-fidelin-ravomanana-59157b281?trk=contact-info'
   }
   return (
     <>
