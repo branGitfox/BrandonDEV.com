@@ -39,7 +39,7 @@ function Project({projects}) {
         <>
         {
             projects?.map((project, index) => (
-                <div key={index} className="w-96 h rounded border-none  shadow shadow-purple-700 ">
+                <div key={index} className="w-96 h rounded border-none  shadow shadow-blue-700 ">
                     <div className=" relative w-2/2 h-2/4 border-b-2 border-gray-800 border-solid">
                         <img src={'https://brandondev-com-3.onrender.com/images/'+project?.image}  className='w-full h-full rounded-t-md rounded-b-none'/>
                     </div>
