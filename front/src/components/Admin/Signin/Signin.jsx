@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import {toast, ToastContainer} from 'react-toastify'
 import Nav from '../../Nav/Nav'
 import Form from '../Form/Form'
