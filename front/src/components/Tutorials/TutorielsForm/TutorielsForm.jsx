@@ -48,10 +48,12 @@ function TutorielsForm() {
             
           } catch (error) {
             console.error('Error uploading image:', error);
+          }finally{
+            setLoading(true)
           }
 
           try {
-              setLoading(true)
+              
             await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/video/upload', videoData, {
               headers: {
                 'Content-Type': 'multipart/form-data',
