@@ -1,18 +1,22 @@
 import { Link, useNavigate } from "react-router-dom"
 import { FolderIcon } from "@heroicons/react/24/outline"
-import { newProject , uploadImage, uploadGaranty} from "../../../../actions/actions"
+import { newProject } from "../../../../actions/actions"
 
 import Nav from "../../Nav/Nav"
 import { useState, useEffect } from "react"
 import { toast , ToastContainer} from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import { protect } from "../../../../actions/actions"
+import axios from "axios"
 
 function ProjectForm() {
     const [image, setImage] = useState()
     const [garanty, setGaranty] = useState()
     const [data, setData] = useState()
     const navigate = useNavigate()
+    const [uploadedImageUrl, setUploadedImageUrl] = useState(null)
+    const [uploadedGarantyUrl, setUploadedGarantyUrl] = useState(null)
+    const[loading, setLoading] = useState(null)
 
     useEffect(()=> {
         if(!protect){
@@ -26,15 +30,41 @@ function ProjectForm() {
         setData((data) => ({...data, [name]:value}))
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit =async (e) => {
         e.preventDefault()     
-        imageData.append('image', image)      
-        garantyData.append('garanty', garanty)   
-        setData((data) => ({...data, image:image.name, garanty:garanty.name}))
-        console.log(data);
-        uploadGaranty(garantyData).
-        then(uploadImage(imageData)).
-        then(newProject(data).
+        setLoading(true)
+        imageData.append('file', image)      
+        imageData.append('upload_preset', 'zhklmven')
+        garantyData.append('file', garanty)   
+        garantyData.append('upload_preset', 'zhklmven')
+
+        try {
+            const response1 = await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/image/upload', imageData, {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+              },
+            });
+            setUploadedImageUrl(response1?.data.secure_url);
+          } catch (error) {
+            console.error('Error uploading image:', error);
+          } finally {
+            setLoading(false);
+          }
+
+          try {
+            const response2 = await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/video/upload', garantyData, {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+              },
+            });
+            setUploadedGarantyUrl(response2?.data.secure_url);
+          } catch (error) {
+            console.error('Error uploading video:', error);
+          } finally {
+            setLoading(false);
+          }
+        setData((data) => ({...data, image:uploadedImageUrl, garanty:uploadedGarantyUrl}))
+        (newProject(data).
         then(res => res.data.type =='error'? toast.error(res.data.message):navigate('/projects'))
         .catch(err => console.log(err.message)))   
         
