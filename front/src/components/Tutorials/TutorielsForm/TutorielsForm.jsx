@@ -48,8 +48,6 @@ function TutorielsForm() {
             
           } catch (error) {
             console.error('Error uploading image:', error);
-          } finally {
-            setLoading(false);
           }
 
           try {
@@ -66,7 +64,7 @@ function TutorielsForm() {
             console.error('Error uploading video:', error);
           } finally {
             setLoading(false);
-            //creation du tutoriel
+            
         }
 
        
@@ -97,7 +95,7 @@ function TutorielsForm() {
                     <input onChange={(e) => setVideo(e.target.files[0])} type="file" className='border bg-blue-500  rounded p-2 w-full mt-2 border-blue-400'/>
                 </div>
                 <div className=" w-full mt-2 mb-3 mx-auto">
-                    <input type="submit" value={'New Tutorial'} className='border-none bg-blue-700 text-white font-bold rounded p-2 w-full mt-2 border-blue-400'/>
+                    <input type="submit" value={loading?'loading...':'New Tutorial'} className='border-none bg-blue-700 text-white font-bold rounded p-2 w-full mt-2 border-blue-400'/>
                 </div>
             </form>
         </div>
