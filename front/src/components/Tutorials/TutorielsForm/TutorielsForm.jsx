@@ -40,12 +40,12 @@ function TutorielsForm() {
         videoData.append('upload_preset', 'zhklmven')
         setLoading(true)
         try {
-            const response = await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/image/upload', imageData, {
+            const response1 = await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/image/upload', imageData, {
               headers: {
                 'Content-Type': 'multipart/form-data',
               },
             });
-            setUploadedImageUrl(response.data.secure_url);
+            setUploadedImageUrl(response1.data.secure_url);
           } catch (error) {
             console.error('Error uploading image:', error);
           } finally {
@@ -53,14 +53,14 @@ function TutorielsForm() {
           }
 
           try {
-            const response = await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/video/upload', videoData, {
+            const response2 = await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/video/upload', videoData, {
               headers: {
                 'Content-Type': 'multipart/form-data',
               },
             });
-            setUploadedVideoUrl(response.data.secure_url);
+            setUploadedVideoUrl(response2.data.secure_url);
           } catch (error) {
-            console.error('Error uploading image:', error);
+            console.error('Error uploading video:', error);
           } finally {
             setLoading(false);
           }
