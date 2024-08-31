@@ -18,7 +18,7 @@ function TutorielsForm() {
 
     const navigate = useNavigate()
     
-    console.log(protect);
+    // console.log(protect);
     useEffect(()=>{
         if(!protect){
             navigate('/')
