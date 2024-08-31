@@ -45,7 +45,7 @@ function TutorielsForm() {
                 'Content-Type': 'multipart/form-data',
               },
             });
-            setUploadedImageUrl(response1?.data.secure_url);
+            setUploadedImageUrl(response1?.data?.secure_url);
           } catch (error) {
             console.error('Error uploading image:', error);
           } finally {
@@ -58,7 +58,7 @@ function TutorielsForm() {
                 'Content-Type': 'multipart/form-data',
               },
             });
-            setUploadedVideoUrl(response2?.data.secure_url);
+            setUploadedVideoUrl(response2?.data?.secure_url);
           } catch (error) {
             console.error('Error uploading video:', error);
           } finally {
