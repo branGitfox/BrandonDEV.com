@@ -64,9 +64,9 @@ function ProjectForm() {
             setLoading(false);
           }
         setData((data) => ({...data, image:uploadedImageUrl, garanty:uploadedGarantyUrl}))
-        (newProject(data).
+        newProject(data).
         then(res => res.data.type =='error'? toast.error(res.data.message):navigate('/projects'))
-        .catch(err => console.log(err.message)))   
+        .catch(err => console.log(err.message))
         
     }
 
