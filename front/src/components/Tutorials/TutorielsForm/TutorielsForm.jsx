@@ -40,12 +40,12 @@ function TutorielsForm() {
         videoData.append('upload_preset', 'zhklmven')
         setLoading(true)
         try {
-            const response1 = await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/image/upload', imageData, {
+            await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/image/upload', imageData, {
               headers: {
                 'Content-Type': 'multipart/form-data',
               },
-            });
-            setUploadedImageUrl(response1?.data?.secure_url);
+            }).then(response1 => setUploadedImageUrl(response1.data.secure_url))
+            
           } catch (error) {
             console.error('Error uploading image:', error);
           } finally {
@@ -53,24 +53,22 @@ function TutorielsForm() {
           }
 
           try {
-            const response2 = await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/video/upload', videoData, {
+            await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/video/upload', videoData, {
               headers: {
                 'Content-Type': 'multipart/form-data',
               },
-            });
-            setUploadedVideoUrl(response2?.data?.secure_url);
+            }).then(response2 =>setUploadedVideoUrl(response2.data.secure_url))
+            .then(setData((data) => ({...data, bg:uploadedImageUrl, video:uploadedVideoUrl})))
           } catch (error) {
             console.error('Error uploading video:', error);
           } finally {
             setLoading(false);
-            setData((data) => ({...data, bg:uploadedImageUrl, video:uploadedVideoUrl}))
-            console.log(data);
-            
             //creation du tutoriel
-            newTutorial(data)
-            .then(res => res.data.type == 'success'? toast.success(res.data.message):toast.error(res.data.message))
-            .catch(err => console.log(err.message))
-          }
+        }
+
+        newTutorial(data)
+        .then(res => res.data.type == 'success'? toast.success(res.data.message):toast.error(res.data.message))
+        .catch(err => console.log(err.message))
 
        
     }
