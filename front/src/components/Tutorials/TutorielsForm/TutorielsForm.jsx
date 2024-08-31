@@ -44,13 +44,14 @@ function TutorielsForm() {
               headers: {
                 'Content-Type': 'multipart/form-data',
               },
-            }).then(response1 => setUploadedImageUrl(response1.data.secure_url))
+            }).then(response1 => setUploadedImageUrl(response1.data.secure_url)).then(setLoading(false))
             
           } catch (error) {
             console.error('Error uploading image:', error);
           }
 
           try {
+              setLoading(true)
             await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/video/upload', videoData, {
               headers: {
                 'Content-Type': 'multipart/form-data',
