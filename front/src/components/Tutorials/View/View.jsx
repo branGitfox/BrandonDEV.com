@@ -41,9 +41,9 @@ function View() {
 function Tutorial ({tutorial}){
     return (
         <>
-            <video className='w-full shadow shadow-blue-700 h-3/5 border-none rounded mx-auto' controls src={`https://brandondev-com-3.onrender.com/tutoVideos/${tutorial?.video}`} ></video>
+            <video className='w-full shadow shadow-blue-700 h-3/5 border-none rounded mx-auto' controls src={`${tutorial?.video}`} ></video>
             <div className="mt-5 ">
-                <a target="_blank" onClick={() => incrementDownload(tutorial._id).then(toast.success('Enjoy the video !'))} href={`https://brandondev-com-3.onrender.com/tutoVideos/${tutorial?.video}`} download className='p-2 bg-blue-400 font-md rounded'>Download <ArrowDownIcon className="w-5 h-5 inline text-blue-500"/></a>
+                <a target="_blank" onClick={() => incrementDownload(tutorial._id).then(toast.success('Enjoy the video !'))} href={`${tutorial?.video}`} download className='p-2 bg-blue-400 font-md rounded'>Download <ArrowDownIcon className="w-5 h-5 inline text-blue-500"/></a>
                 <button onClick={() => incrementLike(tutorial._id).then(toast.success('Thanks a lot !'))} className='p-2 bg-red-300   font-md mx-2 rounded'>Leave a <HeartIcon className="w-5 h-5 inline text-red-500"/></button>
             </div>
             <div className="mt-5">
