@@ -44,17 +44,8 @@ function TutorielsForm() {
               headers: {
                 'Content-Type': 'multipart/form-data',
               },
-            }).then(response1 => setUploadedImageUrl(response1.data.secure_url)).then(setLoading(false))
-            
-          } catch (error) {
-            console.error('Error uploading image:', error);
-          }finally{
-            setLoading(true)
-          }
-
-          try {
-              
-            await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/video/upload', videoData, {
+            }).then(response1 => setUploadedImageUrl(response1.data.secure_url)).then(
+             await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/video/upload', videoData, {
               headers: {
                 'Content-Type': 'multipart/form-data',
               },
@@ -63,17 +54,15 @@ function TutorielsForm() {
             .then( newTutorial(data)
             .then(res => res.data.type == 'success'? toast.success(res.data.message):toast.error(res.data.message))
             .catch(err => console.log(err.message)))
-          } catch (error) {
-            console.error('Error uploading video:', error);
-          } finally {
-            setLoading(false);
+            )
             
-        }
-
+          } catch (error) {
+            console.error('Error uploading image:', error);
+          }finally{
+            setLoading(false)
+          }
        
-
-       
-    }
+    
 
   return (
     <>
