@@ -63,12 +63,14 @@ function TutorielsForm() {
             console.error('Error uploading video:', error);
           } finally {
             setLoading(false);
+            setData((data) => ({...data, bg:uploadedImageUrl, video:uploadedVideoUrl}))
+            console.log(data);
+            
+            //creation du tutoriel
+            newTutorial(data)
+            .then(res => res.data.type == 'success'? toast.success(res.data.message):toast.error(res.data.message))
+            .catch(err => console.log(err.message))
           }
-        setData((data) => ({...data, bg:uploadedImageUrl, video:uploadedVideoUrl}))
-        //creation du tutoriel
-        newTutorial(data)
-        .then(res => res.data.type == 'success'? toast.success(res.data.message):toast.error(res.data.message))
-        .catch(err => console.log(err.message))
 
        
     }
