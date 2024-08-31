@@ -59,6 +59,9 @@ function TutorielsForm() {
               },
             }).then(response2 =>setUploadedVideoUrl(response2.data.secure_url))
             .then(setData((data) => ({...data, bg:uploadedImageUrl, video:uploadedVideoUrl})))
+            .then( newTutorial(data)
+            .then(res => res.data.type == 'success'? toast.success(res.data.message):toast.error(res.data.message))
+            .catch(err => console.log(err.message)))
           } catch (error) {
             console.error('Error uploading video:', error);
           } finally {
@@ -66,9 +69,7 @@ function TutorielsForm() {
             //creation du tutoriel
         }
 
-        newTutorial(data)
-        .then(res => res.data.type == 'success'? toast.success(res.data.message):toast.error(res.data.message))
-        .catch(err => console.log(err.message))
+       
 
        
     }
