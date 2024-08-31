@@ -40,7 +40,7 @@ function TutorielsForm() {
         videoData.append('upload_preset', 'zhklmven')
         setLoading(true)
         try {
-            const response = await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/video/upload', imageData, {
+            const response = await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/image/upload', imageData, {
               headers: {
                 'Content-Type': 'multipart/form-data',
               },
