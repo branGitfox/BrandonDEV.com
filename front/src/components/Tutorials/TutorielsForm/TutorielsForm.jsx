@@ -1,7 +1,7 @@
 import { useState, useEffect} from "react"
 import Nav from "../../Nav/Nav"
 import { VideoCameraIcon } from "@heroicons/react/24/outline"
-import { newTutorial, uploadTutoImage, uploadTutoVideo, protect } from "../../../../actions/actions"
+import { newTutorial, protect } from "../../../../actions/actions"
 import { toast, ToastContainer } from "react-toastify"
 import 'react-toastify/dist/ReactToastify.css'
 import { useNavigate, useNavigation } from "react-router-dom"

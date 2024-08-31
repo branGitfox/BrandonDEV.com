@@ -52,70 +52,70 @@ app.get('/', (req, res)=>{
 //route pour l'admin
 app.use('/api/admin', adminRouter)
 
-
+//Tous ce qui concerne multer j'utilise plus maintenant
 //storage pour l'image et la video du projet
-const imageStorage = multer.diskStorage({
-    destination:(req,file,cb) => {
-        cb(null, path.join(__dirname,'public/images'))
-    },
+// const imageStorage = multer.diskStorage({
+//     destination:(req,file,cb) => {
+//         cb(null, path.join(__dirname,'public/images'))
+//     },
     
-    filename:(req, file, cb) => {
-        cb(null, file.originalname)
-    }
-})
+//     filename:(req, file, cb) => {
+//         cb(null, file.originalname)
+//     }
+// })
 
 
-const garantyStorage = multer.diskStorage({
-    destination:(req,file,cb) => {
-        cb(null, path.join(__dirname,'public/garanty'))
-    },
+// const garantyStorage = multer.diskStorage({
+//     destination:(req,file,cb) => {
+//         cb(null, path.join(__dirname,'public/garanty'))
+//     },
     
-    filename:(req, file, cb) => {
-        cb(null, file.originalname)
-    }
-})
+//     filename:(req, file, cb) => {
+//         cb(null, file.originalname)
+//     }
+// })
 
 //uploade l'image et video pour le projet
-const uploadGaranty = multer({storage:garantyStorage})
-const uploadImage = multer({storage:imageStorage})
+// const uploadGaranty = multer({storage:garantyStorage})
+// const uploadImage = multer({storage:imageStorage})
 
 //route pour le projet
 app.use('/api',projectRouter)
 
 //route pour executer le middlewre d'upload d'image et video du projet
-app.post('/api/project/image', uploadImage.single('image'))
-app.post('/api/project/garanty', uploadGaranty.single('garanty'))
+// app.post('/api/project/image', uploadImage.single('image'))
+// app.post('/api/project/garanty', uploadGaranty.single('garanty'))
 
 
 
 //storage pour le tutoriel
+//Plus besoin de ces route parce que j'utilise cloudinary maintenant
+// const tutoImageStorage = multer.diskStorage({
+//     destination: function(req, file, cb){
+//         cb(null, path.join(__dirname,'public/tutoImages'))
+//     },
+//     filename: function(req, file, cb){
+//         cb(null, file.originalname)
+//     }
+// })
 
-const tutoImageStorage = multer.diskStorage({
-    destination: function(req, file, cb){
-        cb(null, path.join(__dirname,'public/tutoImages'))
-    },
-    filename: function(req, file, cb){
-        cb(null, file.originalname)
-    }
-})
-
-const tutoVideoStorage = multer.diskStorage({
-    destination: function(req, file, cb){
-        cb(null, path.join(__dirname,'public/tutoVideos'))
-    },
-    filename: function(req, file, cb){
-        cb(null, file.originalname)
-    }
-})
+// const tutoVideoStorage = multer.diskStorage({
+//     destination: function(req, file, cb){
+//         cb(null, path.join(__dirname,'public/tutoVideos'))
+//     },
+//     filename: function(req, file, cb){
+//         cb(null, file.originalname)
+//     }
+// })
 
 
 //middleware d'upload d'image et de video pour le tutoriel
-const uploadTutoImage= multer({storage:tutoImageStorage})
-const uploadTutoVideo= multer({storage:tutoVideoStorage})
+// const uploadTutoImage= multer({storage:tutoImageStorage})
+// const uploadTutoVideo= multer({storage:tutoVideoStorage})
 
 //route pour executer le middleware d'upload d'image et video du tutoriel
-app.post('/api/tutoriel/image', uploadTutoImage.single('bg'))
-app.post('/api/tutoriel/video', uploadTutoVideo.single('video'))
+// app.post('/api/tutoriel/image', uploadTutoImage.single('bg'))
+// app.post('/api/tutoriel/video', uploadTutoVideo.single('video'))
 
 //route pour le tutoriel
 app.use('/api', tutorielRouter)
