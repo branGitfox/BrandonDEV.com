@@ -34,9 +34,9 @@ function TutorielsForm() {
         e.preventDefault()
         const imageData = new FormData()
         const videoData = new FormData()
-        imageData.append('bg', image)
+        imageData.append('file', image)
         imageData.append('upload_preset', 'zhklmven')
-        videoData.append('video', video)
+        videoData.append('file', video)
         videoData.append('upload_preset', 'zhklmven')
         setLoading(true)
         try {
