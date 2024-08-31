@@ -12,6 +12,9 @@ function TutorielsForm() {
     const [data, setData] = useState()
     const [image, setImage] = useState()
     const [video, setVideo] = useState()
+    const [loading, setLoading] = useState(null)
+    const [uploadedImageUrl, setUploadedImageUrl] =useState(null) 
+    const [uploadedVideoUrl, setUploadedVideoUrl] =useState(null) 
 
     const navigate = useNavigate()
     
@@ -32,16 +35,42 @@ function TutorielsForm() {
         const imageData = new FormData()
         const videoData = new FormData()
         imageData.append('bg', image)
+        imageData.append('upload_preset', 'zhklmven')
         videoData.append('video', video)
-        setData((data) => ({...data, bg:image.name, video:video.name}))
+        videoData.append('upload_preset', 'zhklmven')
+        setLoading(true)
+        try {
+            const response = await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/video/upload', imageData, {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+              },
+            });
+            setUploadedImageUrl(response.data.secure_url);
+          } catch (error) {
+            console.error('Error uploading image:', error);
+          } finally {
+            setLoading(false);
+          }
+
+          try {
+            const response = await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/video/upload', videoData, {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+              },
+            });
+            setUploadedVideoUrl(response.data.secure_url);
+          } catch (error) {
+            console.error('Error uploading image:', error);
+          } finally {
+            setLoading(false);
+          }
+        setData((data) => ({...data, bg:uploadedImageUrl, video:uploadedVideoUrl}))
         //creation du tutoriel
         newTutorial(data)
         .then(res => res.data.type == 'success'? toast.success(res.data.message):toast.error(res.data.message))
         .catch(err => console.log(err.message))
 
-        //upload video et image
-        uploadTutoImage(imageData)
-        uploadTutoVideo(videoData)
+       
     }
 
   return (
