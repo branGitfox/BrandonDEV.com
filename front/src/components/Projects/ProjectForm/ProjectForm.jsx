@@ -54,7 +54,7 @@ function ProjectForm() {
             .then(newProject(data).
         then(res => res.data.type =='error'? toast.error(res.data.message):navigate('/projects'))
         .catch(err => toast.error(err.message)))           
-        )
+        
             
           } catch (error) {
             toast.error('Error uploading image:', error);
@@ -64,7 +64,6 @@ function ProjectForm() {
 
           
         
-))
         
     }
 
