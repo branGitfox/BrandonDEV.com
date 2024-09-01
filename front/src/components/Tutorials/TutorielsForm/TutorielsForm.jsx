@@ -53,11 +53,11 @@ function TutorielsForm() {
             .then(setData((data) => ({...data, bg:uploadedImageUrl, video:uploadedVideoUrl})))
             .then( newTutorial(data)
             .then(res => res.data.type == 'success'? toast.success(res.data.message):toast.error(res.data.message))
-            .catch(err => console.log(err.message)))
+            .catch(err => toast.error(err.message)))
             )
             
           } catch (error) {
-            console.error('Error uploading image:', error);
+            toast.error('Error uploading image:', error);
           }finally{
             setLoading(false)
           }
