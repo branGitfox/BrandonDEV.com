@@ -7,7 +7,7 @@ import linkedin from '../../assets/linkedin.svg'
 
 function Intro() {
   const onMail=()=>{
-    location.href='https://www.gmail.com'
+    location.href='mailto:vixfgit@gmail.com'
   }
 
   const onLinkedIn=()=>{
