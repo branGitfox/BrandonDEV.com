@@ -18,11 +18,11 @@ function Tutorials() {
     }
 
     const onInsta = () =>{
-        location.href=
+        location.href='https://web.instagram.com/brandonfidelin.ravomanana'
     }
 
     const onFb = () => {
-        location.href=
+        location.href='https://web.facebook.com/brandonfidelin.ravomanana'
     }
     useEffect(() => {
         setLoading(true)
