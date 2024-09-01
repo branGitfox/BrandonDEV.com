@@ -53,7 +53,7 @@ function ProjectForm() {
             .then(setData((data) => ({...data, image:uploadedImageUrl, garanty:uploadedGarantyUrl})))
             .then(newProject(data).
         then(res => res.data.type =='error'? toast.error(res.data.message):navigate('/projects'))
-        .catch(err => toast.error(err.message)))           
+        .catch(err => toast.error(err.message))))           
         
             
           } catch (error) {
