@@ -39,34 +39,32 @@ function ProjectForm() {
         garantyData.append('upload_preset', 'zhklmven')
 
         try {
-            const response1 = await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/image/upload', imageData, {
+             await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/image/upload', imageData, {
               headers: {
                 'Content-Type': 'multipart/form-data',
               },
-            });
-            setUploadedImageUrl(response1?.data.secure_url);
+            })
+                 .then(response1=>setUploadedImageUrl(response1?.data.secure_url))
+                 .then(await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/video/upload', garantyData, {
+              headers: {
+                'Content-Type': 'multipart/form-data',
+              },
+            }).then(response2=>setUploadedGarantyUrl(response2?.data.secure_url))
+            .then(setData((data) => ({...data, image:uploadedImageUrl, garanty:uploadedGarantyUrl})))
+            .then(newProject(data).
+        then(res => res.data.type =='error'? toast.error(res.data.message):navigate('/projects'))
+        .catch(err => toast.error(err.message)))           
+        )
+            
           } catch (error) {
-            console.error('Error uploading image:', error);
+            toast.error('Error uploading image:', error);
           } finally {
             setLoading(false);
           }
 
-          try {
-            const response2 = await axios.post('https://api.cloudinary.com/v1_1/dj8shv42o/video/upload', garantyData, {
-              headers: {
-                'Content-Type': 'multipart/form-data',
-              },
-            });
-            setUploadedGarantyUrl(response2?.data.secure_url);
-          } catch (error) {
-            console.error('Error uploading video:', error);
-          } finally {
-            setLoading(false);
-          }
-        setData((data) => ({...data, image:uploadedImageUrl, garanty:uploadedGarantyUrl}))
-        newProject(data).
-        then(res => res.data.type =='error'? toast.error(res.data.message):navigate('/projects'))
-        .catch(err => console.log(err.message))
+          
+        
+))
         
     }
 
@@ -105,7 +103,7 @@ function ProjectForm() {
                     <input onChange={(e) => setGaranty(e.target.files[0])} type="file" className='border bg-blue-500  rounded text-blue-400 p-2 w-full mt-2 border-blue-400'/>
                 </div>
                 <div className=" w-full mt-2 mb-3 mx-auto">
-                    <input type="submit" value={'New Project'} className='border-none bg-blue-700 text-white font-bold rounded p-2 w-full mt-2 border-blue-400'/>
+                    <input type="submit" value={loading?'Loading...':'New Project'} className='border-none bg-blue-700 text-white font-bold rounded p-2 w-full mt-2 border-blue-400'/>
                 </div>
             </form>
         </div>
