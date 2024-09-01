@@ -43,7 +43,7 @@ function Project({projects}) {
                     <div className=" relative w-2/2 h-2/4 border-b-2 border-gray-800 border-solid">
                         <img src={project?.image}  className='w-full h-full rounded-t-md rounded-b-none'/>
                     </div>
-                    <div className=" w-full  h-auto p-2">
+                    <div className=" w-full  h-3/4 p-2">
                         <h4 className="text-gray-500"><InformationCircleIcon className='w-7 h-7 inline text-violet-500'/> {project?.name}</h4>
                         <p className="text-gray-400  mx-2 mt-3 mb-3 font-light">{project?.description}</p>
                         <h4 className="text-gray-500"><ClipboardDocumentListIcon className='w-7 h-7 inline text-violet-500'/> Stacks</h4>
