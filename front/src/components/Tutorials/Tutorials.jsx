@@ -13,7 +13,17 @@ import { Link } from 'react-router-dom'
 function Tutorials() {
     const [tutorials, setTutorials] = useState()
     const [loading, setLoading] = useState(true)
+    const onYou = () =>{
+        location.href='https://youtube.com/@brandonfidelindev?si=NJZwFzwdlm6fCd5A'
+    }
 
+    const onInsta = () =>{
+        location.href=
+    }
+
+    const onFb = () => {
+        location.href=
+    }
     useEffect(() => {
         setLoading(true)
         getTutorial()
@@ -28,14 +38,14 @@ function Tutorials() {
             <h2 className=' mt-10 text-3xl text-gray-400 text-center'><LinkIcon className='w-7 h-7 inline text-violet-500'/>Join Me On</h2>
                 <div className="mt-7 mx-auto  w-80 p-3 flex justify-around flex-wrap">
                     <div className="w h-4  flex justify-center items-center">
-                        <img className='w-10 h-10' src={youtube} alt="" />
+                        <img onClick={onYou} className='w-10 h-10' src={youtube} alt="" />
                     </div>
                     <div className="w h-4  flex justify-center items-center">
-                        <img className='w-10 h-10' src={instagram} alt="" />
+                        <img onClick={onInsta} className='w-10 h-10' src={instagram} alt="" />
 
                     </div>
                     <div className="w h-4  flex justify-center items-center">
-                    <img src={facebook} alt="" />
+                    <img onClick={onFb} src={facebook} alt="" />
 
                         </div>   
                 </div>
