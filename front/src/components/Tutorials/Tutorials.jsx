@@ -30,7 +30,7 @@ function Tutorials() {
         .then(res=>setTutorials(res.data))
         .then(setLoading(false))
         .catch(err => console.log(err.message))
-    }, [])
+    })
     
   return (
     <>
