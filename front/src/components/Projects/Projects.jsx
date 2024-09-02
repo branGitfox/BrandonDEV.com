@@ -24,9 +24,9 @@ function Projects() {
 
 
             <div className=" mt-10 container-sm w-4/5 h-auto p-4 mx-auto flex flex-wrap justify-evenly gap-x-3 gap-y-10">
-            {loading?(
+            {loading==true?
             <LoadingSpinnerComponent type='Spinner' color='blue' size={'100px'}/>
-            ):<Project projects={projects}/>}
+            :<Project projects={projects}/>}
                 
                     
             </div>
