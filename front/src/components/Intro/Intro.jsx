@@ -26,7 +26,7 @@ function Intro() {
       <p className='mt-5 text-white font-100 text-3xl text-center'>Full Stack Developer</p>
         <div className="mt-10 mx-auto flex justify-center gap-x-3">
             <Link to={'about'} className='p-3  border-solid border-dashed border-2 border-blue-800  text-blue-600'>About <ArrowRightIcon aria-hidden="true" className="h-4 w-4 inline"/></Link>
-            <a href='/CV professionnel chargé de communication moderne bleu 2.png' Download className='p-3 font-bold text-gray-900 bg-blue-600 shadow shadow-blue-600'>Download CV <ArrowDownIcon className='h4 w-4 inline'/></a>
+            <a href='../../CV professionnel chargé de communication moderne bleu 2.png' Download className='p-3 font-bold text-gray-900 bg-blue-600 shadow shadow-blue-600'>Download CV <ArrowDownIcon className='h4 w-4 inline'/></a>
         </div>
     </div>
     <div className="mt-10 w-10 mx-auto flex justify-between gap-x-2">
