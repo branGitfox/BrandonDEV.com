@@ -26,7 +26,7 @@ function App() {
               <Route path='/backend/newProject' element={<ProjectForm/>}/>
               <Route path='/backend/newTutorials' element={<TutorielsForm/>}/>
               <Route path='/about' element={<About/>}/>
-             <Route path='*' element={<NotFound/>}/>
+        
           </Routes>
       </BrowserRouter>
     </>
