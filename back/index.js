@@ -45,17 +45,24 @@ mongoose.connect(MONGO_URI).then(res => {
     
     app.listen(PORT, ()=> {
        console.log('http://localhost:3000')
-       setInterval(async () »> (
-for (const url of URLS_TO_CHECK) {
-try ‹
-const response = await fetch(url);
-if (tresponse.ok) <
-console.log(*Non-2xx status from $(url}: ${response.st
+          setInterval(async () => {
+           for (const url of URLS_TO_CHECK) {
+          
+        try {
+
+        const response = await fetch(url);
+
+          if (response.ok) {
+          console.log(`Non-2xx status from ${url}`)
+          }
+
+        } catch (error) {
+        console. log(`Error fetching ${url}: ${error.message}`)
+          }
+
 }
-} catch (error) {
-console. log(Error fetching $(url): ${error.message)*.re
-}, CHECK_INTERVAL);
-    })
+        }, CHECK_INTERVAL);
+      })
 }).catch(err => console.log(err.message))
 
 //route principale
