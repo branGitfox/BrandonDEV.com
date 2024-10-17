@@ -39,7 +39,8 @@ function Project({projects}) {
         <>
         {
             projects?.map((project, index) => (
-                <div key={index} className="w-96  rounded border-none  shadow shadow-blue-700 ">
+                <div key={index} data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom" className="w-96  rounded border-none  shadow shadow-blue-700 ">
                     <div className=" relative w-2/2 border-b-2 border-gray-800 border-solid">
                         <img src={project?.image}  className='w-full h-full rounded-t-md rounded-b-none'/>
                     </div>

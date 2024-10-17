@@ -71,7 +71,8 @@ function Tuto({tutorials}){
         <>
             {
                 tutorials?.map((tutorial, index) => (
-                    <div key={index} className="w-96 h-96 rounded border-none  shadow shadow-blue-700">
+                    <div key={index} data-aos="fade-up"
+                    data-aos-anchor-placement="top-bottom" className="w-96 h-96 rounded border-none  shadow shadow-blue-700">
                     <div className=" relative w-2/2 h-2/3 border-b-2 border-gray-800 border-solid">
                     <Link onClick={() => incrementView(tutorial._id)} to={`/tutorials/view/${tutorial._id}`}><PlayIcon className='w-20 h-20 text-blue-800 absolute top-1/3 right-1/3 mx-5'/></Link>
                     <img src={`${tutorial.bg}`}  className='w-full h-full rounded-t-md rounded-b-none'/>
