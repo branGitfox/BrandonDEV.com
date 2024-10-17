@@ -43,9 +43,7 @@ function Stacks() {
                 </div>
                 <div className=" mt-3 p-1 flex flex-wrap justify-evenly gap-3">
                     {
-                        fronts.map((front, index) => <div key={index} data-aos="fade-right"
-                        data-aos-offset="300"
-                        data-aos-easing="ease-in-sine" className="text-gray-400 rounded-md h-4 w flex justify-center p-5 items-center border-solid border-2 border-blue-900">
+                        fronts.map((front, index) => <div key={index} className="text-gray-400 rounded-md h-4 w flex justify-center p-5 items-center border-solid border-2 border-blue-900">
                         <img className='w-6 h-6 mx-2 ' src={front.logo} alt="" />
                         {front.name}
                     </div> )
@@ -59,9 +57,7 @@ function Stacks() {
                 </div>
                 <div className=" mt-3 p-1 flex flex-wrap justify-evenly gap-3">
                     {
-                        backs.map((back, index) => <div key={index} data-aos="fade-left"
-                        data-aos-offset="300"
-                        data-aos-easing="ease-in-sine" className="text-gray-400 rounded-md h-4 w flex justify-center p-5 items-center border-solid border-2 border-blue-900">
+                        backs.map((back, index) => <div key={index} className="text-gray-400 rounded-md h-4 w flex justify-center p-5 items-center border-solid border-2 border-blue-900">
                         <img className='w-6 h-6 mx-2 ' src={back.logo} alt="" />
                         {back.name}
                     </div> )
@@ -76,9 +72,7 @@ function Stacks() {
                 </div>
                 <div className=" mt-3 p-1 flex flex-wrap justify-evenly gap-3">
                     {
-                        tools.map((tool, index) => <div key={index} data-aos="fade-right"
-                        data-aos-offset="300"
-                        data-aos-easing="ease-in-sine" className="text-gray-400 rounded-md h-4 w flex justify-center p-5 items-center border-solid border-2 border-blue-900">
+                        tools.map((tool, index) => <div key={index} className="text-gray-400 rounded-md h-4 w flex justify-center p-5 items-center border-solid border-2 border-blue-900">
                         <img className='w-6 h-6 mx-2 ' src={tool.logo} alt="" />
                         {tool.name}
                     </div> )
@@ -92,9 +86,7 @@ function Stacks() {
                 </div>
                 <div className=" mt-3 p-1 flex flex-wrap justify-evenly gap-3">
                     {
-                        others.map((other, index) => <div key={index} data-aos="fade-left"
-                        data-aos-offset="300"
-                        data-aos-easing="ease-in-sine" className="text-gray-400 rounded-md h-4 w flex justify-center p-5 items-center border-solid border-2 border-blue-900">
+                        others.map((other, index) => <div key={index} className="text-gray-400 rounded-md h-4 w flex justify-center p-5 items-center border-solid border-2 border-blue-900">
                         <img className='w-6 h-6 mx-2 ' src={other.logo} alt="" />
 
                         {other.name}
