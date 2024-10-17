@@ -32,6 +32,10 @@ app.use(express.static('public'))
 const __dirname =  path.dirname(import.meta.url)
 const PORT= process.env.PORT || 3000
 const MONGO_URI = process.env.MONGO_URI
+const URLS_TO_CHECK = [
+"https://brandon-dev
+];
+const CHECK_INTERVAL = 600000; // 10 minutes
 
 //connexion a la base de donnee
 mongoose.connect(MONGO_URI).then(res => {
@@ -39,7 +43,19 @@ mongoose.connect(MONGO_URI).then(res => {
   
    
     
-    app.listen(PORT, ()=> console.log('http://localhost:3000'))
+    app.listen(PORT, ()=> {
+       console.log('http://localhost:3000')
+       setInterval(async () »> (
+for (const url of URLS_TO_CHECK) {
+try ‹
+const response = await fetch(url);
+if (tresponse.ok) <
+console.log(*Non-2xx status from $(url}: ${response.st
+}
+} catch (error) {
+console. log(Error fetching $(url): ${error.message)*.re
+}, CHECK_INTERVAL);
+    })
 }).catch(err => console.log(err.message))
 
 //route principale
