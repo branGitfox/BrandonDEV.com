@@ -33,9 +33,9 @@ const __dirname =  path.dirname(import.meta.url)
 const PORT= process.env.PORT || 3000
 const MONGO_URI = process.env.MONGO_URI
 const URLS_TO_CHECK = [
-"https://brandon-dev
+"https://https://brandondev-com-3.onrender.com"
 ];
-const CHECK_INTERVAL = 600000; // 10 minutes
+const CHECK_INTERVAL = 300000; // 10 minutes
 
 //connexion a la base de donnee
 mongoose.connect(MONGO_URI).then(res => {
