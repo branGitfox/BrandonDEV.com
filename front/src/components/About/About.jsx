@@ -6,7 +6,9 @@ function About() {
   return (
     <>
     <Nav/>
-        <div className="mt-10 border-none rounded w-4/5 mx-auto p-3 shadow shadow-blue-700">
+        <div data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine" className="mt-10 border-none rounded w-4/5 mx-auto p-3 shadow shadow-blue-700">
             <h3 className="text-gray-400 font-bold"><IdentificationIcon className="w-5 h-5 inline text-violet-500"/> Who am I? </h3>
             <div className="mt-3  p-5">
                 <p className="font-base text-gray-300">
@@ -15,7 +17,9 @@ function About() {
                 </p>
             </div>
         </div>
-        <div className="mt-10 border-none rounded w-4/5 mx-auto p-3 shadow shadow-blue-700">
+        <div data-aos="fade-left"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine" className="mt-10 border-none rounded w-4/5 mx-auto p-3 shadow shadow-blue-700">
             <h3 className="text-gray-400 font-bold"><BookOpenIcon className="w-5 h-5 inline text-violet-500"/> Degrees </h3>
             <div className="mt-3  p-5">
                 <ul className="font-base text-gray-300">
@@ -25,7 +29,9 @@ function About() {
                 </ul>
             </div>
         </div>
-        <div className="mt-10 border-none rounded w-4/5 mx-auto p-3 shadow shadow-blue-700">
+        <div data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine" className="mt-10 border-none rounded w-4/5 mx-auto p-3 shadow shadow-blue-700">
             <h3 className="text-gray-400 font-bold"><FlagIcon className="w-5 h-5 inline text-violet-500"/> Experiences</h3>
             <div className="mt-3  p-5">
                     <ul className="font-base text-gray-300">
@@ -35,7 +41,9 @@ function About() {
                     </ul>
             </div>
         </div>
-        <div className="mt-10 border-none rounded w-4/5 mx-auto p-3 shadow shadow-blue-700">
+        <div data-aos="fade-left"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine" className="mt-10 border-none rounded w-4/5 mx-auto p-3 shadow shadow-blue-700">
             <h3 className="text-gray-400 font-bold"><LanguageIcon className="w-5 h-5 inline text-violet-500"/> Langages</h3>
             <div className="mt-3  p-5">
                     <ul className="font-extralight text-gray-300">
@@ -45,7 +53,9 @@ function About() {
                     </ul>
             </div>
         </div>
-        <div className="mt-10 border-none rounded w-4/5 mx-auto p-3 shadow shadow-blue-700">
+        <div data-aos="fade-right"
+     data-aos-offset="300"
+     data-aos-easing="ease-in-sine" className="mt-10 border-none rounded w-4/5 mx-auto p-3 shadow shadow-blue-700">
             <h3 className="text-gray-400 font-bold"><MapIcon className="w-5 h-5 inline text-violet-500"/> Localisation</h3>
             <div className="mt-3  p-5">
                     <p className="font-extralight text-gray-300">
