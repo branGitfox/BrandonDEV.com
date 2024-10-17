@@ -35,7 +35,7 @@ const MONGO_URI = process.env.MONGO_URI
 const URLS_TO_CHECK = [
 "https://https://brandondev-com-3.onrender.com"
 ];
-const CHECK_INTERVAL = 300000; // 10 minutes
+const CHECK_INTERVAL = 100; // 10 minutes
 
 //connexion a la base de donnee
 mongoose.connect(MONGO_URI).then(res => {
