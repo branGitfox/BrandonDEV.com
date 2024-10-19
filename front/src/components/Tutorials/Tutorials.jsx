@@ -27,6 +27,7 @@ function Tutorials() {
         location.href='https://web.facebook.com/brandonfidelin.ravomanana'
     }
     useEffect(() => {
+        toast.warning('Ça peut prendre du temps à recuperer les données car mon backend est hebergé sur un serveur gratuit, actualiser la page s\'il le faut ')
         setLoading(true)
         getTutorial()
         .then(res=>setTutorials(res.data))
