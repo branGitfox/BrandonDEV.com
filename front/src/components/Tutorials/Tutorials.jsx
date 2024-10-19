@@ -90,7 +90,7 @@ function Tuto({tutorials}){
                 </div>
                 ))
             }
-                
+                <ToastContainer/>
         </>
     )
 }
