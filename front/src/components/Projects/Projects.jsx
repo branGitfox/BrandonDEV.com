@@ -17,7 +17,7 @@ function Projects() {
         getProject().then(res => {
             setProjects(res.data)
         }).then(setLoading(false)).catch(err => console.log(err.message))
-    })
+    },[])
   return (
 
     <>
