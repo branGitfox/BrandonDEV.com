@@ -12,6 +12,7 @@ function Projects() {
 
 
     useEffect(() => {    
+        toast.warning('ça peut prendre à recuperer les données car j\'utilise un server gratuit, Actualiser la page si ça dure trop longtemps')
         setLoading(true)
         getProject().then(res => {
             setProjects(res.data)
@@ -61,7 +62,7 @@ function Project({projects}) {
             </div>
             ))
         }
-          
+          <ToastContainer/>
         </>
     )
 }
