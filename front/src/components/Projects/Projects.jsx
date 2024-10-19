@@ -12,7 +12,7 @@ function Projects() {
 
 
     useEffect(() => {    
-        toast.warning('ça peut prendre du temps à recuperer les données car mon backebd est hebergé sur un server  gratuit, Actualiser la page si ça dure trop longtemps')
+        toast.warning('ça peut prendre du temps de recuperer les données car mon backend est hebergé sur un server  gratuit, Actualiser la page si ça dure trop longtemps')
         setLoading(true)
         getProject().then(res => {
             setProjects(res.data)
