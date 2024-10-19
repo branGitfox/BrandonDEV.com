@@ -6,6 +6,8 @@ import youtube from '../../assets/youtube.svg'
 import instagram from '../../assets/instagram.svg'
 import { getTutorial, incrementView } from '../../../actions/actions'
 import { useEffect, useState } from 'react'
+import { toast , ToastContainer} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
 import LoadingSpinnerComponent from 'react-spinners-components'
 import { Link } from 'react-router-dom'
 
